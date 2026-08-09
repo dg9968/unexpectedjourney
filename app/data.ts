@@ -68,7 +68,7 @@ export const destinations: Destination[] = [
     ages: "7–17 años",
     eyebrow: "Aventura en la naturaleza",
     summary: "Un campamento bilingüe de aventura para fortalecer la confianza, el liderazgo y el trabajo en equipo.",
-    image: "/camp-extra.webp",
+    image: "/rancho-cabalgata.jpg",
     duration: "3, 5 o 7 días",
     highlights: ["Kayak, escalada y cabalgata", "Senderismo, lunada y deportes", "Cabañas separadas por género"],
     included: ["Alojamiento en cabañas", "Alimentos", "Vigilancia 24 horas", "Médicos y enfermeras en sitio", "Servicio de ambulancia", "Excursiones elegidas por la escuela"],
@@ -105,4 +105,3 @@ export const schools: School[] = [
 
 export const getDestination = (slug: string) => destinations.find((item) => item.slug === slug);
 export const getSchool = (slug: string) => schools.find((item) => item.slug === slug);
-
