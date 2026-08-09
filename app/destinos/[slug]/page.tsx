@@ -23,7 +23,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
     <main>
       <Header />
       <section className="detail-hero">
-        <img src={destination.image} alt={`Campamento de verano en ${destination.name}`} />
+        <img src={destination.image} alt={`Campamento de verano en ${destination.name}`} style={{ objectPosition: destination.imagePosition ?? "center" }} />
         <div className="detail-overlay" />
         <div className="detail-hero-copy">
           <Link href="/#destinos" className="back-link">← Todos los destinos</Link>

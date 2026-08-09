@@ -6,6 +6,7 @@ export type Destination = {
   eyebrow: string;
   summary: string;
   image: string;
+  imagePosition?: string;
   duration: string;
   highlights: string[];
   included: string[];
@@ -69,6 +70,7 @@ export const destinations: Destination[] = [
     eyebrow: "Aventura en la naturaleza",
     summary: "Un campamento bilingüe de aventura para fortalecer la confianza, el liderazgo y el trabajo en equipo.",
     image: "/rancho-cabalgata.jpg",
+    imagePosition: "center 18%",
     duration: "3, 5 o 7 días",
     highlights: ["Kayak, escalada y cabalgata", "Senderismo, lunada y deportes", "Cabañas separadas por género"],
     included: ["Alojamiento en cabañas", "Alimentos", "Vigilancia 24 horas", "Médicos y enfermeras en sitio", "Servicio de ambulancia", "Excursiones elegidas por la escuela"],

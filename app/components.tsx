@@ -38,7 +38,7 @@ export function Footer() {
 export function DestinationCard({ destination }: { destination: Destination }) {
   return (
     <Link href={`/destinos/${destination.slug}`} className={`destination-card accent-${destination.accent}`}>
-      <div className="card-media"><img src={destination.image} alt={`Campamento en ${destination.name}`} /></div>
+      <div className="card-media"><img src={destination.image} alt={`Campamento en ${destination.name}`} style={{ objectPosition: destination.imagePosition ?? "center" }} /></div>
       <div className="card-copy">
         <span className="eyebrow">{destination.country} · {destination.ages}</span>
         <h3>{destination.name}</h3>
@@ -65,4 +65,3 @@ export function ContactBand({ title = "¿Listos para dar el siguiente paso?", sc
     </section>
   );
 }
-
