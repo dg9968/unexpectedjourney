@@ -5,12 +5,11 @@ export function Header() {
   return (
     <header className="site-header">
       <Link className="brand" href="/" aria-label="Unexpected Journey, inicio">
-        <img src="/logo.webp" alt="" />
-        <span><strong>Unexpected</strong> Journey</span>
+        <img src="/brand-lockup.jpg" alt="Unexpected Journey" />
       </Link>
       <nav aria-label="Navegación principal">
         <Link href="/#destinos">Destinos</Link>
-        <Link href="/#confianza">Quiénes somos</Link>
+        <Link href="/#confianza">Nuestra historia</Link>
         <Link href="/#escuelas">Para escuelas</Link>
       </nav>
       <a className="button button-small" href="https://wa.me/525573916896" target="_blank" rel="noreferrer">Hablar con una asesora</a>
@@ -22,8 +21,8 @@ export function Footer() {
   return (
     <footer>
       <div>
-        <span className="footer-brand">Unexpected Journey</span>
-        <p>Campamentos que abren el mundo.</p>
+        <img className="footer-lockup" src="/brand-lockup.jpg" alt="Unexpected Journey" />
+        <p>Descubre tu mundo, vive aventuras infinitas.</p>
       </div>
       <div className="footer-links">
         <a href="mailto:angie@unexpectedjourneymx.com">angie@unexpectedjourneymx.com</a>
@@ -49,12 +48,12 @@ export function DestinationCard({ destination }: { destination: Destination }) {
   );
 }
 
-export function ContactBand({ title = "¿Listos para dar el siguiente paso?", school }: { title?: string; school?: string }) {
+export function ContactBand({ title = "Tu próxima historia empieza aquí.", school }: { title?: string; school?: string }) {
   const message = encodeURIComponent(`Hola, quiero recibir información sobre los campamentos de Unexpected Journey${school ? ` para ${school}` : ""}.`);
   return (
     <section className="contact-band">
       <div>
-        <span className="eyebrow eyebrow-light">Atención personal para cada familia</span>
+        <span className="eyebrow eyebrow-light">Confianza en cada paso</span>
         <h2>{title}</h2>
         <p>Cuéntanos la edad de tu hijo y el destino que le interesa. Te ayudaremos a elegir el programa ideal.</p>
       </div>

@@ -10,8 +10,8 @@ export default function Home() {
         <div className="hero-backdrop" />
         <div className="hero-content">
           <span className="eyebrow eyebrow-light">Campamentos nacionales e internacionales · 7–17 años</span>
-          <h1>Un verano que les cambia <em>la mirada.</em></h1>
-          <p>Experiencias seguras y formativas para aprender idiomas, descubrir nuevas culturas y crecer con independencia.</p>
+          <h1>Descubre tu mundo,<br /><em>vive aventuras infinitas.</em></h1>
+          <p>Viajes transformadores para aprender, explorar nuevas culturas y volver a casa con una visión más amplia del mundo.</p>
           <div className="hero-actions">
             <a className="button button-light" href="#destinos">Explorar campamentos</a>
             <a className="quiet-link light" href="https://wa.me/525573916896" target="_blank" rel="noreferrer">Hablar con nosotros →</a>
@@ -23,17 +23,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="intro-strip" aria-label="Ventajas del programa">
-        <div><b>01</b><span>Supervisión<br />especializada</span></div>
-        <div><b>02</b><span>Inmersión<br />en el idioma</span></div>
-        <div><b>03</b><span>Cultura, aventura<br />y comunidad</span></div>
-        <div><b>04</b><span>Acompañamiento<br />de principio a fin</span></div>
+      <section className="intro-strip" aria-label="Valores de Unexpected Journey">
+        <div><b>01</b><span>Entusiasmo</span></div>
+        <div><b>02</b><span>Responsabilidad</span></div>
+        <div><b>03</b><span>Confianza</span></div>
+        <div><b>04</b><span>Honestidad</span></div>
       </section>
 
       <section className="section" id="destinos">
         <div className="section-heading">
-          <div><span className="eyebrow">Verano 2026</span><h2>Elige su próxima aventura</h2></div>
-          <p>Cada programa combina aprendizaje, acompañamiento profesional y experiencias que fortalecen la confianza.</p>
+          <div><span className="eyebrow">Explora · Desafía · Crece</span><h2>Campamentos nacionales e internacionales</h2></div>
+          <p>Experiencias diseñadas para despertar la curiosidad, fortalecer la independencia y crear recuerdos que acompañan toda la vida.</p>
         </div>
         <div className="destination-grid">
           {destinations.map((destination) => <DestinationCard key={destination.slug} destination={destination} />)}
@@ -47,10 +47,10 @@ export default function Home() {
           <div className="stamp">Desde<br /><strong>1999</strong></div>
         </div>
         <div className="trust-copy">
-          <span className="eyebrow">Experiencia que da tranquilidad</span>
-          <h2>Maestras de vocación.<br />Viajeras de corazón.</h2>
-          <p>Miss Mariana y Miss Angie han dedicado más de 25 años a la educación y al cuidado de niños. Conocen lo que una familia necesita para sentirse tranquila y lo que un estudiante necesita para crecer.</p>
-          <blockquote>“No organizamos solamente un viaje. Creamos el espacio para que cada niño descubra de lo que es capaz.”</blockquote>
+          <span className="eyebrow">Nuestra historia</span>
+          <h2>Un espíritu explorador que se convirtió en propósito.</h2>
+          <p>Unexpected Journey nació del deseo de descubrir los tesoros de México y compartir experiencias transformadoras. Hoy, Miss Mariana y Miss Angie suman más de 25 años acompañando a niños y jóvenes con cuidado, experiencia y cercanía.</p>
+          <blockquote>“Cada viaje abre la mente, fortalece la independencia y crea conexiones auténticas.”</blockquote>
           <div className="signature-row"><span>Mariana Jiménez</span><i /><span>Angélica Galindo</span></div>
         </div>
       </section>
@@ -58,8 +58,8 @@ export default function Home() {
       <section className="school-section" id="escuelas">
         <div className="school-copy">
           <span className="eyebrow eyebrow-light">Alianzas con escuelas</span>
-          <h2>Una experiencia hecha para tu comunidad escolar.</h2>
-          <p>Creamos una página informativa exclusiva para cada escuela, con sus programas recomendados, contacto dedicado y mensaje institucional.</p>
+          <h2>Los campamentos de sus sueños, hechos para su comunidad.</h2>
+          <p>Diseñamos una experiencia y una página exclusiva para cada escuela, con programas recomendados, acompañamiento cercano y comunicación clara para las familias.</p>
           <a className="button button-light" href="mailto:paulina@unexpectedjourneymx.com?subject=Alianza%20con%20mi%20escuela">Quiero sumar a mi escuela</a>
         </div>
         <div className="school-list">
@@ -76,4 +76,3 @@ export default function Home() {
     </main>
   );
 }
-

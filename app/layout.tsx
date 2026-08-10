@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { DM_Sans, Fraunces } from "next/font/google";
+import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import { headers } from "next/headers";
 import "./globals.css";
 
-const sans = DM_Sans({ variable: "--font-sans", subsets: ["latin"] });
-const display = Fraunces({ variable: "--font-display", subsets: ["latin"] });
+const sans = Montserrat({ variable: "--font-sans", subsets: ["latin"], weight: ["400", "500", "600", "700"] });
+const display = Cormorant_Garamond({ variable: "--font-display", subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
@@ -13,13 +13,13 @@ export async function generateMetadata(): Promise<Metadata> {
   const origin = `${protocol}://${host}`;
   return {
     metadataBase: new URL(origin),
-    title: { default: "Unexpected Journey | Campamentos que abren el mundo", template: "%s | Unexpected Journey" },
-    description: "Campamentos nacionales e internacionales para niños y jóvenes de 7 a 17 años, con acompañamiento profesional de principio a fin.",
-    icons: { icon: "/logo.webp", shortcut: "/logo.webp" },
+    title: { default: "Unexpected Journey | Aventuras infinitas", template: "%s | Unexpected Journey" },
+    description: "Campamentos nacionales e internacionales para jóvenes de 7 a 17 años. Experiencias de viaje transformadoras, seguras y memorables.",
+    icons: { icon: "/brand-mark.png", shortcut: "/brand-mark.png" },
     openGraph: {
-      title: "Unexpected Journey | Campamentos que abren el mundo",
-      description: "Experiencias seguras y formativas para estudiantes de 7 a 17 años.",
-      images: [{ url: `${origin}/og.png`, width: 1200, height: 630, alt: "Unexpected Journey — Campamentos que abren el mundo" }],
+      title: "Unexpected Journey | Descubre tu mundo",
+      description: "Campamentos nacionales e internacionales. Vive aventuras infinitas.",
+      images: [{ url: `${origin}/og.png`, width: 1200, height: 630, alt: "Descubre tu mundo, vive aventuras infinitas" }],
       locale: "es_MX",
       type: "website",
     },
