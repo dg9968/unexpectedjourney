@@ -5,7 +5,12 @@ import { destinations } from "../data";
 
 export const dynamic = "force-dynamic";
 
-export default async function AdminPage() {
+export default async function AdminPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ updated?: string; deleted?: string }>;
+}) {
+  const { updated, deleted } = await searchParams;
   const db = getDb();
   const rows = await db.select().from(registrations).orderBy(desc(registrations.createdAt));
 
@@ -25,6 +30,9 @@ export default async function AdminPage() {
   return (
     <main className="admin-page">
       <h1>Registros</h1>
+
+      {updated && <p className="form-success">Registro actualizado.</p>}
+      {deleted && <p className="form-success">Registro eliminado.</p>}
 
       <section className="admin-summary">
         {sessionSummaries.map(({ destinationName, session, registered }) => (
@@ -58,6 +66,7 @@ export default async function AdminPage() {
               <th>Tel. emergencia</th>
               <th>Notas médicas</th>
               <th>Comentarios</th>
+              <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
@@ -74,6 +83,12 @@ export default async function AdminPage() {
                 <td>{row.emergencyContactPhone}</td>
                 <td>{row.medicalNotes}</td>
                 <td>{row.comments}</td>
+                <td>
+                  <div className="admin-table-actions">
+                    <a href={`/admin/registrations/${row.id}`}>Editar</a>
+                    <a href={`/admin/registrations/${row.id}/delete`}>Eliminar</a>
+                  </div>
+                </td>
               </tr>
             ))}
           </tbody>

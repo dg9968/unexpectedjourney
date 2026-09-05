@@ -233,6 +233,15 @@ textarea.input { min-height: 90px; padding: 14px 16px; resize: vertical; }
 .admin-table { width: 100%; border-collapse: collapse; font-size: 13px; }
 .admin-table th, .admin-table td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; white-space: nowrap; }
 .admin-table th { color: var(--muted); font-weight: 700; text-transform: uppercase; font-size: 11px; letter-spacing: .04em; }
+.admin-table-actions { display: flex; gap: 14px; align-items: center; }
+.admin-row-actions { grid-column: 1 / -1; display: flex; gap: 14px; align-items: center; }
+.button-danger { background: #c0392b; color: white; }
+.button-danger:hover { background: #a93226; }
+.admin-delete-confirm { max-width: 480px; margin: 0 auto; padding: 60px clamp(20px, 5vw, 60px); }
+.admin-delete-confirm h1 { font-family: var(--font-display), serif; font-size: 32px; margin-bottom: 14px; }
+.admin-delete-confirm p { color: var(--muted); margin-bottom: 26px; }
+.admin-delete-confirm form { display: inline; }
+.admin-delete-actions { display: flex; gap: 14px; }
 
 @media (max-width: 620px) {
   .registro-form { grid-template-columns: 1fr; }
