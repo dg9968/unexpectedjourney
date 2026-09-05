@@ -39,3 +39,6 @@ yarn-error.log*
 /outputs/
 /work/
 /camp location photos/
+
+# local-only scratch space, never committed
+/private/

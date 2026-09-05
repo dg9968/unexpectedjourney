@@ -71,14 +71,16 @@ export default async function RegistroPage({
               {destinationsWithSessions.map((destination) =>
                 (destination.sessions ?? []).map((session) => {
                   const remaining = remainingBySession.get(session.id) ?? session.capacity;
-                  const price = session.priceAmount.toLocaleString("es-MX");
+                  const price = session.priceAmount != null
+                    ? `$${session.priceAmount.toLocaleString("es-MX")} ${session.currency}`
+                    : "Precio por confirmar";
                   return (
                     <option
                       key={session.id}
                       value={`${destination.slug}::${session.id}`}
                       disabled={remaining <= 0}
                     >
-                      {destination.name} · {session.label} · ${price} {session.currency}
+                      {destination.name} · {session.label} · {price}
                       {session.priceNote ? ` (${session.priceNote})` : ""} ·{" "}
                       {remaining > 0 ? `${remaining} lugares disponibles` : "Cupo lleno"}
                     </option>
