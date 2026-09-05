@@ -30,6 +30,11 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
           <h1>{destination.name}</h1>
           <p>{destination.summary}</p>
           <div className="detail-tags"><span>{destination.country}</span><span>{destination.ages}</span><span>{destination.duration}</span></div>
+          {destination.sessions && destination.sessions.length > 0 && (
+            <a className="button" style={{ marginTop: "30px" }} href={`/registro?destino=${destination.slug}`}>
+              Registrar a mi hijo(a)
+            </a>
+          )}
         </div>
       </section>
 

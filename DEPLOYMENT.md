@@ -26,17 +26,31 @@ npm ci
 npm run dev
 ```
 
-## Publicar en otro servidor
+## Publicar en Render
 
-Instala las dependencias y genera la versión de producción:
+El sitio corre como un proceso de Node.js normal (build "standalone" de vinext), respaldado por una base de datos Postgres en Render.
 
 ```bash
 npm ci
 npm run build
-npm run start
+npm run start        # node dist/standalone/server.js
 ```
 
-Configura el servidor o proxy para dirigir el tráfico al proceso de Node. Si el proveedor usa un flujo propio para proyectos Next.js, importa el repositorio y usa los mismos comandos de instalación y compilación.
+Este repositorio incluye un `render.yaml` (Blueprint de Render) que define el servicio web y la base de datos Postgres:
+
+1. En el dashboard de Render, crea un nuevo **Blueprint** apuntando a este repositorio — Render leerá `render.yaml` y creará el servicio web y la base de datos automáticamente.
+2. Render pedirá el valor real de `ADMIN_SECRET` (la contraseña del panel `/admin`) la primera vez — no está en el repositorio.
+3. `DATABASE_URL` se conecta automáticamente a la base de datos Postgres creada por el Blueprint.
+4. Antes del primer uso, aplica la migración a la base de datos real (una sola vez): `psql "$DATABASE_URL" -f drizzle/000X_*.sql` usando la cadena de conexión externa de Render, o `drizzle-kit migrate`.
+
+Para desarrollo local, crea un archivo `.env` (no se sube a git) con:
+
+```
+DATABASE_URL=<cadena de conexión externa de la base de datos en Render>
+ADMIN_SECRET=changeme-local
+```
+
+`npm run dev` carga `.env` automáticamente.
 
 Antes de publicar, confirma el teléfono, correo, fechas, precios y disponibilidad de cada programa en `app/data.ts` y `app/components.tsx`.
 

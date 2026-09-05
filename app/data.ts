@@ -1,3 +1,14 @@
+export type CampSession = {
+  id: string;
+  label: string;
+  startDate: string;
+  endDate: string;
+  priceAmount: number;
+  currency: string;
+  priceNote?: string;
+  capacity: number;
+};
+
 export type Destination = {
   slug: string;
   name: string;
@@ -11,6 +22,7 @@ export type Destination = {
   highlights: string[];
   included: string[];
   accent: string;
+  sessions?: CampSession[];
 };
 
 export type School = {
@@ -61,6 +73,18 @@ export const destinations: Destination[] = [
     highlights: ["Entorno bilingüe", "Clases y talleres interactivos", "Excursiones culturales"],
     included: ["Alojamiento y alimentos", "Programa académico", "Entradas a actividades", "Transporte local", "Supervisión continua", "Seguro médico de emergencia"],
     accent: "gold",
+    sessions: [
+      {
+        id: "montreal-2027-verano",
+        label: "18 de julio – 1 de agosto",
+        startDate: "2027-07-18",
+        endDate: "2027-08-01",
+        priceAmount: 5700,
+        currency: "CAD",
+        priceNote: "más boleto de avión",
+        capacity: 30,
+      },
+    ],
   },
   {
     slug: "rancho-el-lucero",

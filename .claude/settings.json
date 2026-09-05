@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx drizzle-kit *)",
+      "Bash(npm run *)",
+      "Bash(WRANGLER_LOG_PATH=.wrangler/wrangler.log npx vinext build)",
+      "PowerShell(& \".\\\\node_modules\\\\.bin\\\\vinext.cmd\" dev)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/registro)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/admin)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/admin/login)",
+      "Bash(curl -s http://localhost:3000/admin)",
+      "Bash(node -e \"console.log\\(process.version\\)\")",
+      "Bash(node -e ' *)",
+      "Bash(curl -s -i http://localhost:3000/admin)",
+      "PowerShell(Get-Process -Id 37272 -ErrorAction SilentlyContinue)",
+      "PowerShell(Stop-Process -Id 37272 -Force)",
+      "Bash(curl -s -i -X POST http://localhost:3000/api/admin/login -d \"password=wrong\")",
+      "Bash(curl -s -i -c /tmp/cookies.txt -X POST http://localhost:3000/api/admin/login -d \"password=changeme-local\")",
+      "Bash(curl -s -i -b /tmp/cookies.txt http://localhost:3000/admin)",
+      "Bash(curl -s -b /tmp/cookies.txt http://localhost:3000/admin)",
+      "Bash(curl -s -i -X POST http://localhost:3000/api/registrations -d sessionKey=montreal::montreal-2027-verano -d 'childName=Sofia Ramirez' -d childAge=11 -d 'school=Sierra Nevada' -d 'parentName=Laura Ramirez' -d parentPhone=5512345678 -d parentEmail=laura@example.com -d 'emergencyContactName=Carlos Ramirez' -d emergencyContactPhone=5587654321 -d 'medicalNotes=Alergia al polen' -d 'comments=Primera vez en un campamento')",
+      "Bash(curl -s \"http://localhost:3000/registro?success=1\")",
+      "Bash(curl -s http://localhost:3000/registro)",
+      "Read(//tmp/**)",
+      "Bash(mkdir -p \"/c/Users/danie/AppData/Local/Temp/claude/c--Users-danie-Documents-unexpected-journey-unexpectedjourney/3918f610-fd5b-43b5-a944-ec110e191a83/scratchpad\")",
+      "Bash(curl -s -b /tmp/cookies.txt http://localhost:3000/admin -o \"/c/Users/danie/AppData/Local/Temp/claude/c--Users-danie-Documents-unexpected-journey-unexpectedjourney/3918f610-fd5b-43b5-a944-ec110e191a83/scratchpad/admin.html\")",
+      "Bash(curl -s -i -b /tmp/cookies.txt \"http://localhost:3000/admin?format=csv\")",
+      "Bash(curl -s -b /tmp/cookies.txt \"http://localhost:3000/admin?format=csv\" -o \"/c/Users/danie/AppData/Local/Temp/claude/c--Users-danie-Documents-unexpected-journey-unexpectedjourney/3918f610-fd5b-43b5-a944-ec110e191a83/scratchpad/admin-csv-error.html\")",
+      "Bash(curl -s -i -b /tmp/cookies.txt \"http://localhost:3000/admin/export\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" \"http://localhost:3000/admin/export\")",
+      "Bash(curl -s -b /tmp/cookies.txt \"http://localhost:3000/admin/export\")",
+      "Bash(curl -s -i -X POST http://localhost:3000/api/registrations -d sessionKey=montreal::montreal-2027-verano -d 'childName=Overflow Child' -d childAge=10 -d 'school=Test School' -d 'parentName=Test Parent' -d parentPhone=5500000000 -d parentEmail=overflow@example.com -d 'emergencyContactName=Emergency Contact' -d emergencyContactPhone=5511111111)",
+      "PowerShell(Get-NetTCPConnection -LocalPort 3000 -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess -Unique | ForEach-Object { Get-Process -Id $_ -ErrorAction SilentlyContinue })"
+    ]
+  }
+}
