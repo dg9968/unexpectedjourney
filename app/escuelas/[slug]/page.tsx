@@ -19,6 +19,9 @@ export default async function SchoolPage({ params }: { params: Promise<{ slug: s
   const featured = school.featured.map((item) => destinations.find((destination) => destination.slug === item)).filter(Boolean);
   const promise = school.program?.stages ?? defaultPromise;
   const registrable = featured.find((destination) => destination && (destination.sessions?.length ?? 0) > 0);
+  const registroHref = registrable
+    ? `/registro?destino=${registrable.slug}${school.sessionId ? `&session=${school.sessionId}` : ""}`
+    : "";
 
   return (
     <main>
@@ -38,7 +41,7 @@ export default async function SchoolPage({ params }: { params: Promise<{ slug: s
           <div className="hero-actions">
             {registrable ? (
               <>
-                <a className="button" href={`/registro?destino=${registrable.slug}`}>Regístrate</a>
+                <a className="button" href={registroHref}>Regístrate</a>
                 <a className="quiet-link" href="#programas">Conocer los programas</a>
               </>
             ) : (
@@ -64,7 +67,7 @@ export default async function SchoolPage({ params }: { params: Promise<{ slug: s
             ))}
           </div>
           {registrable && (
-            <a className="button" style={{ marginTop: "40px" }} href={`/registro?destino=${registrable.slug}`}>
+            <a className="button" style={{ marginTop: "40px" }} href={registroHref}>
               Inscribe a tu hijo(a)
             </a>
           )}

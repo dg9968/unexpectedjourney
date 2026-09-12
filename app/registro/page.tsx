@@ -17,18 +17,18 @@ const ERROR_MESSAGES: Record<string, string> = {
 export default async function RegistroPage({
   searchParams,
 }: {
-  searchParams: Promise<{ success?: string; error?: string; destino?: string }>;
+  searchParams: Promise<{ success?: string; error?: string; destino?: string; session?: string }>;
 }) {
-  const { success, error, destino } = await searchParams;
+  const { success, error, destino, session } = await searchParams;
 
   const destinationsWithSessions = destinations.filter(
     (destination) => (destination.sessions?.length ?? 0) > 0,
   );
 
   const preselected = destinationsWithSessions.find((destination) => destination.slug === destino);
-  const defaultSessionKey = preselected?.sessions?.[0]
-    ? `${preselected.slug}::${preselected.sessions[0].id}`
-    : "";
+  const requestedSession = preselected?.sessions?.find((item) => item.id === session);
+  const defaultSession = requestedSession ?? preselected?.sessions?.[0];
+  const defaultSessionKey = defaultSession ? `${preselected!.slug}::${defaultSession.id}` : "";
 
   const remainingBySession = new Map<string, number>();
   if (destinationsWithSessions.length > 0) {

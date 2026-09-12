@@ -56,6 +56,7 @@ export type School = {
   imagePosition?: string;
   program?: SchoolProgram;
   flyer?: string;
+  sessionId?: string;
 };
 
 export const destinations: Destination[] = [
@@ -82,6 +83,16 @@ export const destinations: Destination[] = [
         priceNote: "+ vuelo redondo: £3,729 GBP aprox.",
         // TODO: confirmar cupo máximo real de este grupo con el proveedor — valor de referencia mientras se confirma.
         capacity: 25,
+      },
+      {
+        id: "londres-2027-julio",
+        label: "11 de julio – 1 de agosto 2027 · 3 semanas",
+        startDate: "2027-07-11",
+        endDate: "2027-08-01",
+        priceAmount: 4638,
+        currency: "GBP",
+        priceNote: "incluye inscripción y cuota de colegio + vuelo por confirmar (~11 meses antes de la salida)",
+        capacity: 12,
       },
     ],
   },
@@ -213,6 +224,7 @@ export const schools: School[] = [
     featured: ["londres"],
     image: "/icultural-londres.jpg",
     flyer: "/londres-camp-2027-flyer.jpg",
+    sessionId: "londres-2027-mayo",
     program: {
       name: "Londres Camp 2027",
       tagline: "Dos semanas para aprender, explorar y crecer",
@@ -254,6 +266,52 @@ export const schools: School[] = [
         "Deportes",
         "Staff incluido en todas las actividades",
         "Traslados de ida y regreso al aeropuerto",
+      ],
+    },
+  },
+  {
+    slug: "tepeyac",
+    name: "Colegios del Tepeyac",
+    city: "Lindavista, Ciudad de México",
+    intro: "Tres semanas de inmersión en inglés en el corazón de Londres, con Junior Residential Course, excursiones y todos los alimentos incluidos, para la comunidad de Colegios del Tepeyac.",
+    coordinator: "Paulina · Unexpected Journey",
+    featured: ["londres"],
+    image: "/tepeyac-londres.jpg",
+    imagePosition: "center 70%",
+    sessionId: "londres-2027-julio",
+    program: {
+      name: "Londres Camp 2027 · Central London",
+      tagline: "Tres semanas para aprender, explorar y crecer",
+      concept: "Un Junior Residential Course en Central London con Curso de Inglés General (20 lecciones por semana), excursiones y todos los alimentos incluidos. Del 11 de julio al 1 de agosto de 2027, con traslados de ida y regreso al aeropuerto, seguro 24 horas y material de clases incluido. El costo del boleto de avión se define aproximadamente 11 meses antes de la salida.",
+      facts: [
+        { value: "Central London, Reino Unido", label: "Sede" },
+        { value: "11 de julio – 1 de agosto 2027 · 3 semanas", label: "Duración" },
+        { value: "£4,638 GBP", label: "Inversión total (incluye inscripción y cuota de colegio)" },
+        { value: "Por confirmar (~11 meses antes)", label: "Vuelo" },
+      ],
+      stages: [
+        {
+          title: "Aprende",
+          description: "Curso de Inglés General con 20 lecciones por semana, dentro de un Junior Residential Course en Central London.",
+        },
+        {
+          title: "Explora",
+          description: "Excursiones por Londres y alrededores durante las tres semanas del programa.",
+        },
+        {
+          title: "Convive",
+          description: "Vida residencial en comunidad, con todos los alimentos incluidos y acompañamiento y seguro 24 horas.",
+        },
+      ],
+      included: [
+        "Cuota de inscripción",
+        "Colegiatura · Inglés General, 20 lecciones por semana",
+        "Junior Residential Course",
+        "Excursiones",
+        "Traslados de ida y regreso al aeropuerto",
+        "Seguro 24 horas",
+        "Material que se utiliza en clases",
+        "Todos los alimentos incluidos",
       ],
     },
   },
