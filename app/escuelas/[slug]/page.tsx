@@ -90,6 +90,17 @@ export default async function SchoolPage({ params }: { params: Promise<{ slug: s
           <ul>{school.program.included.map((item) => <li key={item}><span>✓</span>{item}</li>)}</ul>
         </section>
       )}
+      {school.flyer && (
+        <section className="section flyer-section">
+          <div className="section-heading">
+            <div><span className="eyebrow">Material oficial</span><h2>Descarga el flyer</h2></div>
+            <p>Compártelo con otras familias de {school.name} interesadas en el programa.</p>
+          </div>
+          <a className="flyer-frame" href={school.flyer} target="_blank" rel="noreferrer">
+            <img src={school.flyer} alt={`Flyer del programa para ${school.name}`} />
+          </a>
+        </section>
+      )}
       <ContactBand title="Hablemos del verano que viene." school={school.name} />
       <Footer />
     </main>

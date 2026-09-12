@@ -55,6 +55,7 @@ export type School = {
   image?: string;
   imagePosition?: string;
   program?: SchoolProgram;
+  flyer?: string;
 };
 
 export const destinations: Destination[] = [
@@ -70,6 +71,19 @@ export const destinations: Destination[] = [
     highlights: ["Ramsay Hall · Universidad de Londres", "20 horas de inglés por semana", "Excursiones, deportes y cultura"],
     included: ["Vuelos con equipaje documentado", "Traslados aeropuerto–campamento", "Seguro médico", "Supervisión y seguridad 24/7", "Actividades y excursiones programadas"],
     accent: "coral",
+    sessions: [
+      {
+        id: "londres-2027-mayo",
+        label: "16 – 30 de mayo 2027 · 2 semanas",
+        startDate: "2027-05-16",
+        endDate: "2027-05-30",
+        priceAmount: 2008,
+        currency: "GBP",
+        priceNote: "+ vuelo redondo: £3,729 GBP aprox.",
+        // TODO: confirmar cupo máximo real de este grupo con el proveedor — valor de referencia mientras se confirma.
+        capacity: 25,
+      },
+    ],
   },
   {
     slug: "toronto",
@@ -187,6 +201,59 @@ export const schools: School[] = [
         "Fogata y dinámicas nocturnas",
         "Acompañamiento de facilitadores expertos y staff de apoyo",
         "Protocolo de seguridad y atención básica",
+      ],
+    },
+  },
+  {
+    slug: "icultural",
+    name: "Instituto Cultural Teresiano",
+    city: "Coyoacán, Ciudad de México",
+    intro: "Idioma y cultura en Londres: dos semanas de inmersión en inglés, excursiones y deportes, diseñadas para la comunidad del Instituto Cultural Teresiano.",
+    coordinator: "Paulina · Unexpected Journey",
+    featured: ["londres"],
+    image: "/icultural-londres.jpg",
+    flyer: "/londres-camp-2027-flyer.jpg",
+    program: {
+      name: "Londres Camp 2027",
+      tagline: "Dos semanas para aprender, explorar y crecer",
+      concept: "Un programa residencial en Londres con Curso General de inglés (20 lecciones por semana), excursiones por la ciudad y alrededores, y deportes. Del 16 al 30 de mayo de 2027, con boleto de avión gestionado por Unexpected Journey, traslados de ida y regreso al aeropuerto, y staff de acompañamiento incluido en todas las actividades.",
+      facts: [
+        { value: "Londres, Reino Unido", label: "Sede" },
+        { value: "16 – 30 de mayo 2027 · 2 semanas", label: "Duración" },
+        { value: "£2,008 GBP", label: "Inversión (programa)" },
+        { value: "£3,729 GBP", label: "Vuelo redondo" },
+      ],
+      stages: [
+        {
+          title: "Aprende",
+          description: "Curso General de inglés con 20 lecciones por semana, en un grupo internacional dentro de la escuela de idiomas.",
+        },
+        {
+          title: "Explora",
+          description: "Excursiones por Londres y alrededores: Westminster, Natural History Museum, crucero por el río Támesis, Emirates Stadium, día en Oxford, día en Brighton, British Museum, Oxford Street & Soho, uno de los mercados de la ciudad, Tower of London y noche de bowling.",
+        },
+        {
+          title: "Convive",
+          description: "Deportes, dos semanas de vida en comunidad, nuevas amistades e independencia, siempre acompañados por el staff del programa.",
+        },
+      ],
+      included: [
+        "Boleto de avión gestionado por Unexpected Journey",
+        "Curso General de inglés · 20 lecciones por semana",
+        "Excursión: Westminster tour",
+        "Natural History Museum",
+        "Crucero por el río Támesis",
+        "Tour al Emirates Stadium",
+        "Excursión de un día a Oxford",
+        "Excursión de un día a Brighton",
+        "British Museum",
+        "Oxford Street & Soho",
+        "Visita a uno de los mercados de Londres",
+        "Tower of London",
+        "Noche de bowling",
+        "Deportes",
+        "Staff incluido en todas las actividades",
+        "Traslados de ida y regreso al aeropuerto",
       ],
     },
   },
